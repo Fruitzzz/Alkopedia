@@ -1,0 +1,199 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:AlkoPedia.Themes">
+    <Style x:Key="main-label" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="46"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <ControlTemplate x:Key="nav-button" TargetType="Button">
+        <Border x:Name="Brd" Background="#e0e0da" Height="40px" Width="{TemplateBinding Width}" HorizontalAlignment="Center" Margin="20px 0 0 0">
+            <ContentControl FontSize="28px" FontFamily="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR" HorizontalAlignment="Center" Foreground="#242423" VerticalAlignment="Center" Content="{TemplateBinding Content}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Foreground" Value="#242423"/>
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="nav-item" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20px"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="user-panel" TargetType="StackPanel">
+        <Setter Property="Grid.Column" Value="9"/>
+        <Setter Property="Grid.ColumnSpan" Value="3"/>
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="user-name" TargetType="TextBox">
+        <Setter Property="FontSize" Value="12px"/>
+        <Setter Property="FontFamily" Value="Tahoma"/>
+        <Setter Property="Width" Value="168px"/>
+        <Setter Property="Height" Value="15px"/>
+        <Setter Property="Margin" Value="5px 0 0 0"/>
+    </Style>
+
+    <Style x:Key="user-password" TargetType="PasswordBox">
+        <Setter Property="FontSize" Value="12px"/>
+        <Setter Property="FontFamily" Value="Tahoma"/>
+        <Setter Property="Width" Value="157px"/>
+        <Setter Property="Height" Value="15px"/>
+        <Setter Property="Margin" Value="5px 4px 0 0"/>
+    </Style>
+
+    <Style x:Key="nav-grid" TargetType="Grid">
+        <Setter Property="Background" Value="#e0e0da"/>
+    </Style>
+
+    <ControlTemplate x:Key="main-btn" TargetType="Button">
+        <Border x:Name="Brd" CornerRadius="10" BorderBrush="#242423" BorderThickness="2" Background="#e0e0da" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" HorizontalAlignment="Right">
+            <ContentControl FontSize="{TemplateBinding FontSize}" FontFamily="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR" HorizontalAlignment="Center" Foreground="#242423" VerticalAlignment="Center" Content="{TemplateBinding Content}"/>
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="conf-text" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="46px"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <ControlTemplate x:Key="swap-theme" TargetType="Button">
+        <Border x:Name="Brd" CornerRadius="25" BorderBrush="#242423" BorderThickness="2" Background="#e0e0da" Height="40px" Width="90px" Margin="-80px 0 0 0" HorizontalAlignment="Left">
+            <ContentControl>
+                <ContentControl FontSize="24px" FontFamily="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR" Foreground="#242423" Content="Light Off" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ContentControl>
+        </Border>
+        <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="Button.MouseEnter" SourceName="Brd">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetName="Brd" Storyboard.TargetProperty="Margin" From="-80px, 0, 0, 0" To="0, 0, 0, 0" Duration="0:0:.5" BeginTime="0:0:0.5"/>
+                            <ThicknessAnimation Storyboard.TargetName="Brd" Storyboard.TargetProperty="Margin" From="0, 0, 0, 0" To="-80px, 0, 0, 0" Duration="0:0:0.5" BeginTime="0:0:1.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="main-read-text" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="40px"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="0 20px 0 0"/>
+        <Setter Property="Height" Value="50px"/>
+    </Style>
+
+    <Style x:Key="Workplace" TargetType="Grid">
+        <Setter Property="Background" Value="#e0e0da"/>
+    </Style>
+
+    <Style x:Key="main-title" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="35px"/>
+        <Setter Property="FontWeight" Value="Black"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+    </Style>
+
+    <Style x:Key="main-recipe" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20px"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+    </Style>
+
+    <Style x:Key="main-org" TargetType="Border">
+        <Setter Property="Background" Value="#b0b0b0"/>
+        <Setter Property="Width" Value="240px"/>
+        <Setter Property="Height" Value="220px"/>
+    </Style>
+
+    <Style x:Key="main-org-pic" TargetType="Image">
+        <Setter Property="Margin" Value="0 20px 0 0"/>
+        <Setter Property="Height" Value="120px"/>
+        <Setter Property="Width" Value="200px"/>
+    </Style>
+
+    <Style x:Key="main-text" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="30px"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+        <Setter Property="Margin" Value="0 20px 0 0"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Width" Value="200px"/>
+        <Setter Property="Height" Value="50px"/>
+    </Style>
+
+    <Style x:Key="cocktail-title" TargetType="TextBlock">
+        <Setter Property="Margin" Value="10px 0 0 0"/>
+        <Setter Property="FontSize" Value="35px"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+    </Style>
+    <Style x:Key="cocktail-recipe" TargetType="TextBlock">
+        <Setter Property="Margin" Value="10px 5px 0 0"/>
+        <Setter Property="FontSize" Value="20px"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Width" Value="500px"/>
+        <Setter Property="Height" Value="auto"/>
+    </Style>
+    <Style x:Key="cocktail-elements" TargetType="TextBlock">
+        <Setter Property="Margin" Value="10px 10px 0 0"/>
+        <Setter Property="FontSize" Value="20px"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Width" Value="auto"/>
+    </Style>
+    <Style x:Key="present-panel" TargetType="StackPanel">
+        <Setter Property="Background" Value="#e0e0da"/>
+    </Style>
+    <ControlTemplate x:Key="link-box" TargetType="TextBox">
+        <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="#e0e0da" HorizontalAlignment="Left">
+            <ContentControl Content="{TemplateBinding Text}" FontFamily="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR" FontSize="{TemplateBinding FontSize}" Margin="{TemplateBinding Margin}" Foreground="#f5deab" HorizontalAlignment="Left"/>
+        </Border>
+    </ControlTemplate>
+    <Style x:Key="paste-el" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24px"/>
+        <Setter Property="Width" Value="200px"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Margin" Value="10px 10px 0 0"/>
+        <Setter Property="FontFamily" Value="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR"/>
+        <Setter Property="Foreground" Value="#242423"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <ControlTemplate x:Key="paste-btn" TargetType="Button">
+        <Border x:Name="Brd" CornerRadius="10" BorderBrush="#242423" BorderThickness="2" Background="#e0e0da" Height="26px" Width="60px" HorizontalAlignment="Center">
+            <ContentControl FontSize="18px" FontFamily="../Fonts/RavenscroftCYR.ttf#RavenscroftCYR" HorizontalAlignment="Center" Foreground="#242423" VerticalAlignment="Center" Content="{TemplateBinding Content}"/>
+        </Border>
+    </ControlTemplate>
+    <Style x:Key="paste-img" TargetType="Image">
+        <Setter Property="Width" Value="175px"/>
+        <Setter Property="Height" Value="200px"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+</ResourceDictionary>
+
